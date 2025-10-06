@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - GAW Inc</title>
+  <meta name="description" content="Contact GAW Inc for branding, web design, and creative digital solutions. Let's bring your vision to life.">
+  <meta name="keywords" content="GAW Inc, contact, web development, creative agency, Ghana, branding">
+  <meta name="author" content="GAW Inc">
+
+  <link rel="icon" href="faviocn.png" type="image/png">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      color: #f5f5f5;
+      text-align: center;
+      background: linear-gradient(-45deg, #000, #111, #000, #222);
+      background-size: 400% 400%;
+      animation: gradientFlow 12s ease infinite;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    nav {
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.7);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      backdrop-filter: blur(6px);
+    }
+
+    nav a {
+      color: #FFD700;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 8px #FFD700;
+    }
+
+    h1 {
+      color: #FFD700;
+      font-size: 2.5em;
+      margin-top: 120px;
+      text-shadow: 0 0 15px rgba(255,215,0,0.5);
+      animation: glowPulse 2.5s infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      from { text-shadow: 0 0 10px rgba(255,215,0,0.3); }
+      to { text-shadow: 0 0 25px rgba(255,215,0,1); }
+    }
+
+    p {
+      margin: 20px auto 40px;
+      max-width: 700px;
+      line-height: 1.6;
+      font-size: 1.1em;
+    }
+
+    form {
+      max-width: 450px;
+      margin: 0 auto 60px;
+      text-align: left;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      animation: fadeIn 2s ease;
+    }
+
+    label {
+      color: #FFD700;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 20px 0;
+      border: 1px solid #FFD700;
+      border-radius: 6px;
+      background: #000;
+      color: #fff;
+      font-size: 1em;
+      transition: border 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #FFD700;
+      box-shadow: 0 0 10px rgba(255,215,0,0.6);
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #888;
+    }
+
+    button {
+      background: #FFD700;
+      color: #000;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      display: block;
+      margin: 0 auto;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: #C9A227;
+      transform: scale(1.05);
+    }
+
+    .success {
+      margin-top: 20px;
+      color: #00ff9d;
+      font-weight: bold;
+      display: none;
+    }
+
+    footer {
+      background: #111;
+      color: #FFD700;
+      padding: 20px;
+      font-size: 0.95em;
+      margin-top: 40px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+ <nav>
+  <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+    <img src="using.png" alt="GAW Inc Logo" style="height: 50px; width: 50px; border-radius: 50%; box-shadow: 0 0 10px rgba(255,215,0,0.5);">
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="service.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+
+  <h1>Contact GAW Inc</h1>
+  <p>Got a vision, idea, or project? Let’s build something unforgettable together.</p>
+
+  <form id="contactForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+
+    <button type="submit">Send Message</button>
+    <p class="success" id="successMsg">✅ Message sent successfully! We'll get back to you soon.</p>
+  </form>
+
+  <footer>
+    <p>&copy; 2025 GAW Inc. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const msg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      msg.style.display = 'block';
+      form.reset();
+      setTimeout(() => msg.style.display = 'none', 4000);
+    });
+  </script>
+
+</body>
+</html>
