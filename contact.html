@@ -191,17 +191,28 @@
     <p>&copy; 2025 GAW Inc. All Rights Reserved.</p>
   </footer>
 
-  <script>
-    const form = document.getElementById('contactForm');
-    const msg = document.getElementById('successMsg');
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("HYXZg30ChRLdCb-Zc");
+  })();
 
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      msg.style.display = 'block';
-      form.reset();
-      setTimeout(() => msg.style.display = 'none', 4000);
-    });
-  </script>
+  const form = document.getElementById('contactForm');
+  const msg = document.getElementById('successMsg');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    emailjs.sendForm('service_f950w0b', 'template_hboc2vc', this)
+      .then(() => {
+        msg.style.display = 'block';
+        form.reset();
+        setTimeout(() => msg.style.display = 'none', 4000);
+      }, (error) => {
+        alert('Something went wrong: ' + JSON.stringify(error));
+      });
+  });
+</script>
 
 </body>
 </html>
+
