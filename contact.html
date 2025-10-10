@@ -134,9 +134,30 @@
       transform: scale(1.05);
     }
 
+    .loading {
+      display: none;
+      margin-top: 15px;
+      color: #FFD700;
+      font-size: 1em;
+      font-weight: bold;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
     .success {
       margin-top: 20px;
       color: #00ff9d;
+      font-weight: bold;
+      display: none;
+    }
+
+    .error {
+      margin-top: 20px;
+      color: #ff4d4d;
       font-weight: bold;
       display: none;
     }
@@ -182,8 +203,10 @@
     <label for="message">Message:</label>
     <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
 
-    <button type="submit">Send Message</button>
+    <button type="submit" id="sendBtn">Send Message</button>
+    <p class="loading" id="loadingMsg">⏳ Sending your message...</p>
     <p class="success" id="successMsg">✅ Message sent successfully! We'll get back to you soon.</p>
+    <p class="error" id="errorMsg">❌ Failed to send. Please try again later.</p>
   </form>
 
   <footer>
@@ -194,26 +217,42 @@
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     (function() {
-      emailjs.init("HYXZg30ChRLdCb-Zc"); // Replace this line with your public key from EmailJS dashboard
+      emailjs.init("Kntp049MNJec9rdPs"); // <-- Replace with your EmailJS public key
     })();
 
     const form = document.getElementById('contactForm');
-    const msg = document.getElementById('successMsg');
+    const sendBtn = document.getElementById('sendBtn');
+    const loadingMsg = document.getElementById('loadingMsg');
+    const successMsg = document.getElementById('successMsg');
+    const errorMsg = document.getElementById('errorMsg');
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
 
+      // show loading
+      loadingMsg.style.display = 'block';
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+      sendBtn.disabled = true;
+      sendBtn.style.opacity = 0.7;
+
       emailjs.sendForm('service_f950w0b', 'template_hboc2vc', this)
         .then(() => {
-          msg.style.display = 'block';
+          loadingMsg.style.display = 'none';
+          successMsg.style.display = 'block';
+          sendBtn.disabled = false;
+          sendBtn.style.opacity = 1;
           form.reset();
-          setTimeout(() => msg.style.display = 'none', 4000);
+          setTimeout(() => successMsg.style.display = 'none', 5000);
         }, (error) => {
-          alert('Something went wrong: ' + JSON.stringify(error));
+          loadingMsg.style.display = 'none';
+          errorMsg.style.display = 'block';
+          sendBtn.disabled = false;
+          sendBtn.style.opacity = 1;
+          console.error('EmailJS Error:', error);
         });
     });
   </script>
 
 </body>
 </html>
-
