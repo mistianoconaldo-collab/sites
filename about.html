@@ -1,201 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - GAW Inc</title>
-  <meta name="description" content="Learn about GAW Inc — a digital creative powerhouse blending art, technology, and storytelling to build timeless brands.">
-  <meta name="keywords" content="GAW Inc, about, creative agency, branding, web design, innovation, Ghana">
-  <meta name="author" content="GAW Inc">
-
-  <link rel="icon" href="faviocn.png" type="image/png">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', Arial, sans-serif;
-      background: linear-gradient(-45deg, #000, #111, #000, #111);
-      background-size: 400% 400%;
-      animation: gradientFlow 12s ease infinite;
-      color: #f5f5f5;
-      text-align: center;
-      overflow-x: hidden;
-    }
-
-    @keyframes gradientFlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    nav {
-      padding: 15px;
-      background: rgba(0, 0, 0, 0.7);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 10;
-      backdrop-filter: blur(6px);
-    }
-
-    nav a {
-      color: #FFD700;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 600;
-      transition: color 0.3s, text-shadow 0.3s;
-    }
-
-    nav a:hover {
-      color: #fff;
-      text-shadow: 0 0 8px #FFD700;
-    }
-
-    h1 {
-      color: #FFD700;
-      font-size: 3em;
-      margin-top: 120px;
-      text-shadow: 0 0 15px rgba(255,215,0,0.5);
-      animation: glowPulse 2.5s infinite alternate;
-    }
-
-    @keyframes glowPulse {
-      from { text-shadow: 0 0 10px rgba(255,215,0,0.3); }
-      to { text-shadow: 0 0 25px rgba(255,215,0,1); }
-    }
-
-    p.intro {
-      max-width: 700px;
-      margin: 20px auto 60px;
-      font-size: 1.2em;
-      line-height: 1.6;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 1s ease;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    h2 {
-      color: #FFD700;
-      font-size: 1.8em;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-    }
-
-    p {
-      font-size: 1.05em;
-      line-height: 1.8;
-      color: #ddd;
-    }
-
-    hr {
-      border: none;
-      height: 2px;
-      background: #FFD700;
-      width: 60%;
-      margin: 60px auto;
-    }
-
-    footer {
-      background: #111;
-      color: #FFD700;
-      padding: 20px;
-      font-size: 0.95em;
-      margin-top: 60px;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — GAW Inc</title>
+  <meta name="description" content="About GAW Inc — our mission, vision and values." />
+  <link rel="icon" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta property="og:title" content="About — GAW Inc" />
+  <meta property="og:description" content="Our mission and values — creativity that connects." />
+  <meta property="og:image" content="using.png" />
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="about">
 
- <nav>
-  <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
-    <img src="using.png" alt="GAW Inc Logo" style="height: 50px; width: 50px; border-radius: 50%; box-shadow: 0 0 10px rgba(255,215,0,0.5);">
-    <div>
+  <nav class="site-nav" role="navigation" aria-label="Main">
+    <div class="nav-inner">
+      <div class="brand">
+        <img src="using.png" alt="GAW Inc circular gold logo" loading="lazy">
+        <h3>GAW Inc</h3>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <button class="hamburger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">☰</button>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu" hidden>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="service.html">Services</a>
       <a href="contact.html">Contact</a>
     </div>
-  </div>
-</nav>
+  </nav>
 
+  <main style="padding-top:110px">
+    <section class="reveal">
+      <div class="section-inner">
+        <h1 style="color:var(--gold);font-size:clamp(1.6rem,4.5vw,2.6rem);margin-bottom:12px">About GAW Inc</h1>
+        <p class="lead">We’re a studio where craft meets code. Designers, devs and storytellers building digital legacies for brands that want to matter.</p>
 
-  <h1>About GAW Inc</h1>
-  <p class="intro">We’re more than a creative agency — we’re a digital workshop where artistry meets technology and ideas turn into timeless experiences.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px">
+          <div>
+            <h2>Mission</h2>
+            <p>To empower brands to communicate boldly through design and technology — making work that moves people.</p>
+          </div>
+          <div>
+            <h2>Vision</h2>
+            <p>A world where storytelling, artistry and technology bridge divides and make digital spaces feel human.</p>
+          </div>
+        </div>
 
-  <section>
-    <h2>Who We Are</h2>
-    <p>
-      GAW Inc is a collective of designers, developers, and storytellers.  
-      We build digital experiences rooted in creativity, emotion, and connection.  
-      Every project we craft aims to blend beauty and purpose — merging the past’s artistry with the future’s innovation.
-    </p>
-  </section>
-
-  <hr>
-
-  <section>
-    <h2>Our Mission</h2>
-    <p>
-      To empower brands to communicate boldly through design and technology.  
-      We strive to turn ideas into experiences that move people — visually, emotionally, and intellectually.
-    </p>
-  </section>
-
-  <hr>
-
-  <section>
-    <h2>Our Vision</h2>
-    <p>
-      A world where creativity bridges every digital divide.  
-      Where storytelling, artistry, and technology unite to create digital spaces that *feel human* again.
-    </p>
-  </section>
-
-  <hr>
-
-  <section>
-    <h2>Our Values</h2>
-    <p>
-      <strong>Creativity:</strong> We celebrate originality and experimentation.<br>
-      <strong>Integrity:</strong> We build trust through transparency and quality.<br>
-      <strong>Innovation:</strong> We chase the future without forgetting the roots.<br>
-      <strong>Connection:</strong> Every design we make has one goal — to connect deeply.
-    </p>
-  </section>
+        <div style="margin-top:26px">
+          <h2>Values</h2>
+          <p><strong>Creativity:</strong> Experimentation is our engine. <strong>Integrity:</strong> We ship what we promise. <strong>Innovation:</strong> We chase what's next while honoring craft.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 GAW Inc. All Rights Reserved.</p>
+    <div class="container">
+      <img src="using.png" alt="GAW Inc small gold mark" style="height:36px;width:36px;margin-bottom:8px;opacity:.9" loading="lazy">
+      <p>&copy; 2025 GAW Inc. All rights reserved.</p>
+    </div>
   </footer>
 
   <script>
-    const sections = document.querySelectorAll('section');
-    const reveal = () => {
-      const trigger = window.innerHeight / 1.2;
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top < trigger) {
-          section.classList.add('visible');
-        }
+    // same mobile + nav highlight + reveal logic as index
+    (function init(){
+      const btn = document.querySelector('.hamburger');
+      const menu = document.getElementById('mobile-menu');
+      btn.addEventListener('click', ()=> {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        menu.hidden = open;
+        btn.textContent = open ? '☰' : '✕';
       });
-    };
-    window.addEventListener('scroll', reveal);
-    reveal();
+
+      // highlight
+      const page = document.body.dataset.page;
+      document.querySelectorAll('.nav-links a').forEach(a=>{
+        if(page && a.getAttribute('href').includes(page)) a.classList.add('active');
+        if(page==='about' && a.getAttribute('href').endsWith('about.html')) a.classList.add('active');
+      });
+
+      // reveal
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(prefersReduced) document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+      else {
+        const obs = new IntersectionObserver(entries=>{
+          entries.forEach(e=>{
+            if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target) }
+          });
+        },{threshold:0.12});
+        document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+      }
+    })();
   </script>
 
 </body>
