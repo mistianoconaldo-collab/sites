@@ -1,223 +1,137 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GAW Inc | Art, Code, and Vision</title>
-  <meta name="description" content="GAW Inc transforms creativity into digital power — where artistry meets code and brands become timeless.">
-  <meta name="keywords" content="GAW Inc, creative agency, branding, website design, digital art, Ghana">
-  <meta name="author" content="GAW Inc">
-  <link rel="icon" href="faviocn.png" type="image/png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GAW Inc | Art, Code & Vision</title>
+  <meta name="description" content="GAW Inc — crafting visuals, code and motion that last. Black & gold digital studio." />
+  <meta name="author" content="GAW Inc" />
+  <link rel="icon" href="favicon.png" type="image/png">
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    body {
-      font-family: 'Poppins', Arial, sans-serif;
-      background: #000;
-      color: #f5f5f5;
-      text-align: center;
-      overflow-x: hidden;
-    }
+  <!-- Open Graph -->
+  <meta property="og:title" content="GAW Inc | Art, Code & Vision" />
+  <meta property="og:description" content="Crafting visuals, code and motion that last." />
+  <meta property="og:image" content="using.png" />
+  <meta property="og:type" content="website" />
 
-    nav {
-      padding: 15px;
-      background: rgba(0, 0, 0, 0.7);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 10;
-      backdrop-filter: blur(6px);
-    }
-
-    nav a {
-      color: #FFD700;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 600;
-      transition: color 0.3s, text-shadow 0.3s;
-    }
-
-    nav a:hover { color: #fff; text-shadow: 0 0 8px #FFD700; }
-
-    nav img {
-      height: 50px;
-      width: 50px;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(255,215,0,0.5);
-      vertical-align: middle;
-      margin-right: 15px;
-    }
-
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(-45deg, #111, #000, #111, #000);
-      background-size: 400% 400%;
-      animation: gradientFlow 12s ease infinite, fadeIn 1.5s ease-out;
-      padding: 0 10px;
-    }
-
-    @keyframes gradientFlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .hero h1 {
-      color: #FFD700;
-      font-size: 3.8em;
-      letter-spacing: 2px;
-      text-shadow: 0 0 20px rgba(255,215,0,0.6);
-      animation: glowPulse 2.5s infinite alternate;
-    }
-
-    @keyframes glowPulse {
-      from { text-shadow: 0 0 10px rgba(255,215,0,0.3); }
-      to { text-shadow: 0 0 25px rgba(255,215,0,1); }
-    }
-
-    .hero p {
-      font-size: 1.2em;
-      color: #ccc;
-      max-width: 800px;
-      margin-top: 15px;
-      line-height: 1.7;
-    }
-
-    .cta-btn {
-      margin-top: 30px;
-      padding: 14px 35px;
-      background: #FFD700;
-      color: #000;
-      border: none;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    .cta-btn:hover {
-      background: #C9A227;
-      transform: scale(1.08);
-    }
-
-    section {
-      padding: 100px 20px;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 1s ease;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    h2 {
-      color: #FFD700;
-      font-size: 1.8em;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-    }
-
-    p {
-      font-size: 1.1em;
-      color: #ddd;
-      line-height: 1.8;
-      max-width: 850px;
-      margin: 0 auto;
-    }
-
-    footer {
-      background: #111;
-      color: #FFD700;
-      padding: 25px;
-      margin-top: 60px;
-      font-size: 0.95em;
-    }
-
-    footer img {
-      height: 40px;
-      width: 40px;
-      margin-bottom: 10px;
-      opacity: 0.8;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="home">
 
-  <!-- Navigation -->
-  <nav>
-    <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
-      <img src="using.png" alt="GAW Inc Logo">
-      <div>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="service.html">Services</a>
-        <a href="contact.html">Contact</a>
+  <!-- NAV -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="brand">
+        <img src="using.png" alt="GAW Inc circular gold logo" loading="lazy">
+        <h3>GAW Inc</h3>
       </div>
+
+      <div class="nav-links" role="menubar">
+        <a href="index.html" role="menuitem">Home</a>
+        <a href="about.html" role="menuitem">About</a>
+        <a href="service.html" role="menuitem">Services</a>
+        <a href="contact.html" role="menuitem">Contact</a>
+      </div>
+
+      <button class="hamburger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        ☰
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu" hidden>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="service.html">Services</a>
+      <a href="contact.html">Contact</a>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <div class="hero">
-    <h1>GAW Inc</h1>
-    <p>We are the artists of the digital age — crafting visuals, code, and motion that speak louder than words.  
-    Every design we make is a pulse from the future, every project a story with a golden heartbeat.  
-    We don’t just create brands; we build legacies that echo across screens and generations.</p>
-    <button class="cta-btn" onclick="location.href='about.html'">Enter the Vision</button>
-  </div>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <h1>GAW Inc</h1>
+      <p>We craft visuals, code, and motion with a golden heartbeat — designs built to last and stories that echo.</p>
+      <button class="cta" onclick="location.href='about.html'">Enter the Vision</button>
+    </div>
+  </header>
 
-  <!-- What We Are Section -->
-  <section>
-    <h2>About Us</h2>
-    <p>
-      <strong>GAW Inc</strong> stands at the intersection of tradition and technology.  
-      Born from a love for timeless artistry and the relentless drive of innovation,  
-      we fuse imagination with precision to create experiences that inspire emotion and purpose.  
-      Our craft goes beyond aesthetics — it’s about identity, culture, and impact.
-    </p>
+  <!-- ABOUT PREVIEW -->
+  <section aria-labelledby="about-preview">
+    <div class="section-inner reveal">
+      <h2 id="about-preview">Who we are</h2>
+      <p class="lead">A studio where tradition meets tomorrow — designers, devs and storytellers building digital legacies.</p>
+      <p>We combine craft and technical clarity to create websites, brand identities and motion that feel human and move people.</p>
+    </div>
   </section>
 
-  <!-- Why We Exist Section -->
-  <section>
-    <h2>Our Philosophy</h2>
-    <p>
-      We believe every idea deserves a stage and every brand deserves a story.  
-      That’s why our work combines bold design with technical mastery, ensuring that every creation feels alive.  
-      Whether it’s a website, a campaign, or a full digital ecosystem, we build it to last — not for the moment, but for the movement.
-    </p>
+  <!-- SERVICES PREVIEW -->
+  <section aria-labelledby="services-preview">
+    <div class="section-inner reveal">
+      <h2 id="services-preview">What we do</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px">
+        <article class="card">
+          <h3>Web Design & Development</h3>
+          <p>Fast, accessible, and beautiful sites — built to perform and convert.</p>
+        </article>
+
+        <article class="card">
+          <h3>Brand Identity</h3>
+          <p>Logos, systems and visual language that age like fine gold.</p>
+        </article>
+
+        <article class="card">
+          <h3>Motion & Content</h3>
+          <p>Short-form reels to cinematic spots — visual storytelling that lands.</p>
+        </article>
+      </div>
+    </div>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <img src="using.png" alt="GAW Inc Logo">
-    <p>&copy; 2025 GAW Inc. All Rights Reserved.</p>
+    <div class="container">
+      <img src="using.png" alt="GAW Inc small gold mark" style="height:36px;width:36px;margin-bottom:8px;opacity:.9" loading="lazy">
+      <p>&copy; 2025 GAW Inc. All rights reserved.</p>
+    </div>
   </footer>
 
   <script>
-    const sections = document.querySelectorAll('section');
-    const reveal = () => {
-      const trigger = window.innerHeight / 1.2;
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top < trigger) section.classList.add('visible');
+    // mobile menu toggle
+    (function(){
+      const btn = document.querySelector('.hamburger');
+      const menu = document.getElementById('mobile-menu');
+      btn.addEventListener('click', ()=> {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        if(open){ menu.hidden = true; btn.textContent = '☰' }
+        else { menu.hidden = false; btn.textContent = '✕' }
       });
-    };
-    window.addEventListener('scroll', reveal);
-    reveal();
+    })();
+
+    // highlight current nav link
+    (function(){
+      const page = document.body.dataset.page;
+      document.querySelectorAll('.nav-links a').forEach(a=>{
+        if(page && a.getAttribute('href').includes(page)) a.classList.add('active');
+        if(page==='home' && a.getAttribute('href').endsWith('index.html')) a.classList.add('active');
+      });
+    })();
+
+    // reveal (intersection observer, reduced motion friendly)
+    (function(){
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(prefersReduced) document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+      else {
+        const obs = new IntersectionObserver(entries=>{
+          entries.forEach(e=>{
+            if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target) }
+          });
+        },{threshold:0.12});
+        document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+      }
+    })();
   </script>
 
 </body>
