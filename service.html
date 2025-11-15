@@ -1,154 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GAW Inc | Services</title>
-  <meta name="description" content="Explore GAW Inc’s creative and digital services — from brand identity to web development and visual storytelling.">
-  <meta name="keywords" content="GAW Inc, services, web design, branding, creative agency, Ghana, development">
-  <meta name="author" content="GAW Inc">
-  <link rel="icon" href="faviocn.png" type="image/png">
-
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Poppins', Arial, sans-serif;
-      background-color: #000;
-      color: #f5f5f5;
-      text-align: center;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-
-    nav {
-      padding: 15px;
-      background: rgba(0, 0, 0, 0.7);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 10;
-      backdrop-filter: blur(6px);
-    }
-
-    nav a {
-      color: #FFD700;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 600;
-      transition: color 0.3s, text-shadow 0.3s;
-    }
-
-    nav a:hover {
-      color: #fff;
-      text-shadow: 0 0 8px #FFD700;
-    }
-
-    nav img {
-      height: 50px;
-      width: 50px;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(255,215,0,0.5);
-      vertical-align: middle;
-      margin-right: 15px;
-    }
-
-    header {
-      padding-top: 100px;
-      color: #FFD700;
-      font-size: 2.5em;
-      text-shadow: 0 0 15px rgba(255,215,0,0.5);
-      margin-bottom: 40px;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 40px 20px;
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(255,215,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    section:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 20px rgba(255,215,0,0.3);
-    }
-
-    h2 {
-      color: #FFD700;
-      font-size: 1.8em;
-      margin-bottom: 15px;
-    }
-
-    p {
-      font-size: 1.1em;
-      color: #ddd;
-      line-height: 1.8;
-    }
-
-    footer {
-      background: #111;
-      color: #FFD700;
-      padding: 20px;
-      margin-top: 80px;
-      font-size: 0.95em;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Services — GAW Inc</title>
+  <meta name="description" content="GAW Inc Services — web, brand, motion, photography." />
+  <link rel="icon" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Services — GAW Inc" />
+  <meta property="og:description" content="Web, brand and motion services built to last." />
+  <meta property="og:image" content="using.png" />
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="service">
 
-  <nav>
-    <div style="display:flex; align-items:center; justify-content:center; gap:20px;">
-      <img src="using.png" alt="GAW Inc Logo">
-      <div>
+  <nav class="site-nav" role="navigation">
+    <div class="nav-inner">
+      <div class="brand">
+        <img src="using.png" alt="GAW Inc circular gold logo" loading="lazy">
+        <h3>GAW Inc</h3>
+      </div>
+
+      <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="service.html">Services</a>
         <a href="contact.html">Contact</a>
       </div>
+
+      <button class="hamburger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">☰</button>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu" hidden>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="service.html">Services</a>
+      <a href="contact.html">Contact</a>
     </div>
   </nav>
 
-  <header>Our Services</header>
+  <main style="padding-top:110px">
+    <section class="reveal">
+      <div class="section-inner">
+        <h1 style="color:var(--gold);font-size:clamp(1.6rem,4.5vw,2.6rem);margin-bottom:12px">Our Services</h1>
+        <p class="lead">From pixel to motion — we ship full brand ecosystems: web, identity, content and production.</p>
 
-  <section>
-    <h2>Web Design & Development</h2>
-    <p>
-      We design and build websites that are as functional as they are beautiful.  
-      Every pixel, animation, and line of code is crafted to bring your brand to life online — fast, secure, and unforgettable.
-    </p>
-  </section>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px">
+          <article class="card">
+            <h3>Web Design & Dev</h3>
+            <p>Responsive, fast and accessible websites — tailored to your goals.</p>
+          </article>
 
-  <section>
-    <h2>Brand Identity & Visual Design</h2>
-    <p>
-      Your brand deserves to be seen — and remembered.  
-      We create logos, colors, and visual systems that capture your essence and stand the test of time.
-    </p>
-  </section>
+          <article class="card">
+            <h3>Brand Identity</h3>
+            <p>Logos, color systems and brand guidelines rooted in strategy.</p>
+          </article>
 
-  <section>
-    <h2>Content Creation & Motion Graphics</h2>
-    <p>
-      From short-form reels to cinematic brand stories, we transform ideas into visual experiences.  
-      Our motion graphics team blends rhythm, emotion, and clarity to make your message unforgettable.
-    </p>
-  </section>
+          <article class="card">
+            <h3>Motion & Content</h3>
+            <p>Short form and cinematic video for campaigns and social.</p>
+          </article>
 
-  <section>
-    <h2>Photography & Videography</h2>
-    <p>
-      We capture more than moments — we capture mood, texture, and truth.  
-      Whether for campaigns, portraits, or products, our visuals make your brand feel alive.
-    </p>
-  </section>
+          <article class="card">
+            <h3>Photo & Video Production</h3>
+            <p>Studio and location shoots — product, portrait and lifestyle.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <img src="using.png" alt="GAW Inc Logo" style="height:40px; width:40px; margin-bottom:10px; opacity:0.8;">
-    <p>&copy; 2025 GAW Inc. All Rights Reserved.</p>
+    <div class="container">
+      <img src="using.png" alt="GAW Inc small gold mark" style="height:36px;width:36px;margin-bottom:8px;opacity:.9" loading="lazy">
+      <p>&copy; 2025 GAW Inc. All rights reserved.</p>
+    </div>
   </footer>
+
+  <script>
+    (function init(){
+      const btn = document.querySelector('.hamburger');
+      const menu = document.getElementById('mobile-menu');
+      btn.addEventListener('click', ()=> {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        menu.hidden = open;
+        btn.textContent = open ? '☰' : '✕';
+      });
+
+      const page = document.body.dataset.page;
+      document.querySelectorAll('.nav-links a').forEach(a=>{
+        if(page && a.getAttribute('href').includes(page)) a.classList.add('active');
+        if(page==='service' && a.getAttribute('href').endsWith('service.html')) a.classList.add('active');
+      });
+
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(prefersReduced) document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+      else {
+        const obs = new IntersectionObserver(entries=>{
+          entries.forEach(e=>{
+            if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target) }
+          });
+        },{threshold:0.12});
+        document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+      }
+    })();
+  </script>
 
 </body>
 </html>
